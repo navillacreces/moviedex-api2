@@ -80,6 +80,10 @@ app.get('/movie', function handleGetMovie(req,res){
             }
         }
     }
+
+    if (!req.query.genre && !req.query.avg_vote && !req.query.country){
+      res.json(movieList)
+    }
     
     res.json(results)
 
